@@ -4,11 +4,9 @@ import "./Post.css";
 
 const post = props => (
   <article className="Post">
-    <h1 title={props.title}>Title</h1>
+    <h1>{props.title}</h1>
     <div className="Info">
-      <div className="Author" author={props.author}>
-        Author
-      </div>
+      <div className="Author">{props.author}</div>
     </div>
   </article>
 );

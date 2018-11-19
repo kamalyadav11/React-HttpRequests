@@ -18,13 +18,13 @@ class Blog extends Component {
   }
 
   render() {
+    const posts = this.state.posts.map(post => (
+      <Post key={post.id} title={post.title} author={post.id} />
+    ));
+
     return (
       <div>
-        <section className="Posts">
-          <Post title={this.state.posts.title} />
-          <Post />
-          <Post />
-        </section>
+        <section className="Posts">{posts}</section>
         <section>
           <FullPost />
         </section>
