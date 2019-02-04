@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Route, NavLink, Switch } from "react-router-dom";
-
+import { NavLink, Route, Switch } from "react-router-dom";
+import asyncComponent from "../../hoc/asyncComponent";
 import "./Blog.css";
 import Posts from "./Posts/Posts";
-import asyncComponent from "../../hoc/asyncComponent";
 
 const AsyncNewPost = asyncComponent(() => {
   return import("./NewPost/NewPost");
@@ -13,6 +12,7 @@ class Blog extends Component {
   state = {
     auth: true
   };
+
   render() {
     return (
       <div className="Blog">
