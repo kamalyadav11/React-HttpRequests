@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Post from "../../../components/Post/Post";
 import "./Posts.css";
@@ -28,20 +27,19 @@ export default class Posts extends Component {
   }
 
   postSelectHanlder = id => {
-    this.setState({ selectedPostId: id });
+    this.props.history.push(`/${id}`);
   };
 
   render() {
     let posts = <p>Something went Wrong!</p>;
     if (!this.state.error) {
       posts = this.state.posts.map(post => (
-        <Link to={`/${post.id}`} key={post.id}>
-          <Post
-            title={post.title}
-            author={post.author}
-            clicked={() => this.postSelectHanlder(post.id)}
-          />
-        </Link>
+        <Post
+          key={post.id}
+          title={post.title}
+          author={post.author}
+          clicked={() => this.postSelectHanlder(post.id)}
+        />
       ));
     }
     return (
