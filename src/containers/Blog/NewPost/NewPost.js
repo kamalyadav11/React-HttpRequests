@@ -18,12 +18,11 @@ class NewPost extends Component {
       content: this.state.content,
       author: this.state.author
     };
-    axios
-      .post("/posts", data)
-      .then(
-        response => console.log(response),
-        this.setState({ submitted: true })
-      );
+    axios.post("/posts", data).then(
+      response => console.log(response),
+      // this.setState({ submitted: true }),
+      this.props.history.replace("/posts") //2nd way of redirecting /push or /replace
+    );
   };
 
   render() {
