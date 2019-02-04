@@ -14,7 +14,7 @@ class Blog extends Component {
             <ul>
               <li>
                 <NavLink
-                  to="/"
+                  to="/posts"
                   exact
                   activeStyle={{ textDecoration: "underline" }}
                 >
@@ -31,7 +31,7 @@ class Blog extends Component {
         </header>
         <Switch>
           <Route path="/new-post" component={NewPost} />
-          <Route path="/" component={Posts} />
+          <Route path="/posts" component={Posts} />
         </Switch>
       </div>
     );

@@ -29,10 +29,11 @@ export default class Posts extends Component {
   }
 
   postSelectHanlder = id => {
-    this.props.history.push(`/${id}`);
+    this.props.history.push(`/posts/${id}`);
   };
 
   render() {
+    console.log(this.props);
     let posts = <p>Something went Wrong!</p>;
     if (!this.state.error) {
       posts = this.state.posts.map(post => (
@@ -47,7 +48,7 @@ export default class Posts extends Component {
     return (
       <div>
         <section className="Posts">{posts}</section>
-        <Route path={this.props.match.url + ":id"} component={FullPost} />
+        <Route path={this.props.match.url + "/:id"} component={FullPost} />
       </div>
     );
   }
