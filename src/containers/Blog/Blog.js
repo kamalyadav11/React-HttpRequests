@@ -35,13 +35,6 @@ class Blog extends Component {
           <Route path="/new-post" component={NewPost} />
           <Route path="/:id" component={FullPost} />
         </Switch>
-
-        {/* <section>
-          <FullPost id={this.state.selectedPostId} />
-        </section>
-        <section>
-          <NewPost />
-        </section> */}
       </div>
     );
   }
