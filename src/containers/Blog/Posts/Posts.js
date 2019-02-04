@@ -47,7 +47,7 @@ export default class Posts extends Component {
     return (
       <div>
         <section className="Posts">{posts}</section>
-        <Route path="/:id" component={FullPost} />
+        <Route path={this.props.match.url + ":id"} component={FullPost} />
       </div>
     );
   }
